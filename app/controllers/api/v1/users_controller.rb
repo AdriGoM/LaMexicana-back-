@@ -5,8 +5,8 @@ class Api::V1::UsersController < ApplicationController
         render json: @users.to_json
     end
 
-    
-    def show
+    #login
+    def shows
         @user = User.find_by(username: params[:username])
         if User.where(:username => params[:username], :password => params[:password]).present?
             render json: {
